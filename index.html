@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Poppins:wght@300&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+        <style>
+            #navbar{
+                height: 100px;
+                width: 90%;
+                margin: auto;
+                background-color: blueviolet;
+                border-radius: 10px;
+                display: flex;
+                justify-content: space-around;
+            }
+            a{
+                text-decoration: none;
+                color: black;
+                margin-top: 40px;
+                font-family: 'Roboto', sans-serif;
+            }
+            a:hover{
+                color: white;
+                font-size: 25px;
+            }
+            #image{
+                width: 90%;
+                margin-left: 5%;
+                height: 500px;
+                border-radius: 15px;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="navbar">
+            <a href="signup.html">SignUP</a>
+            <a href="login.html">LogIn</a>
+        </div>
+
+
+
+        <div id="slideshow">
+            <!--Show Slideshow here-->
+
+        </div>
+
+        <div id="sort-buttons">
+
+            <!--Add sorting here-->
+        </div>
+        <div id="movies">
+            <!--Show list of movies here-->
+        </div>
+
+       
+    </body>
+
+</html>
+<script>
+    let movies = document.querySelector("#movies");
+    let i=0;
+
+    let id;
+    function slide() {
+   let img = ["https://wallpaperaccess.com/full/3968121.jpg",
+              "https://wallpapercave.com/wp/ltg7wdw.jpg",
+              "https://wallpaperaccess.com/full/329583.jpg",
+              "https://wallpapercave.com/wp/wp2751453.jpg",
+              "https://wallpapercave.com/wp/wp6658962.jpg"
+            ]
+
+
+         let image = document.createElement("img");
+         image.setAttribute("id","image")
+         
+         setInterval(function () {
+             if(i === img.length) {
+                 i = 0;
+             }
+
+             image.src = img[i]
+             movies.append(image);
+             i++;
+         },3000)
+
+    }
+slide()
+
+
+</script>

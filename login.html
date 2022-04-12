@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <style>
+         #login-form-div{
+          
+          width: 300px;
+          border-radius: 15px;
+          padding-left: 70px;
+          padding-top: 20px;
+          height: 300px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+          margin: auto;
+          margin-top: 40px;
+       }
+        h1{
+           font-family: 'Roboto', sans-serif;
+        }
+        #submit{
+            background-color: teal;
+            color: white;
+            height: 25px;
+            width: 100px;
+             border-inline: 0px;
+             border-radius: 7px;
+        }
+        #navbar{
+               height: 100px;
+               width: 90%;
+               margin: auto;
+               background-color: blueviolet;
+               border-radius: 10px;
+               display: flex;
+               justify-content: space-around;
+           }
+           #box1{
+             
+               width: 40%;
+               margin-left: 900px;
+               height: 30px;
+               margin-top: 30px;
+               
+           }
+           a{
+               text-decoration: none;
+               color: black;
+               font-family: 'Roboto', sans-serif;
+               margin-left: 40px;
+               
+           }
+           a:hover{
+               color: white;
+               font-size: 25px;
+           }
+
+
+
+        </style>
+    </head>
+
+    <body>
+
+        <div id="navbar">
+            <div id="box1">
+                <a href="index.html">Home</a>
+                <a href="signup.html">SignUp</a>
+                <a href="login.html">LogIn</a>
+            </div>
+       </div>
+
+
+
+       <div id="login-form-div">
+            <h1>LogIn</h1>
+           <form>
+               <!--Write form input elements here-->
+                   
+                  
+                   <input type="email" name="" id="email" placeholder="Enter Your Email" value=""><br><br>
+                   <input type="password" name="" id="password" placeholder="Enter Your Password" value=""><br><br>
+                   <input id="submit" type="submit">
+    
+           </form>
+
+       </div>
+        
+    </body>
+
+</html>
+<script>
+
+//  let Data = JSON.parse(localStorage.getItem("Data"))
+//  //console.log(data)
+
+//  let entered_email=document.querySelector("#email").value;
+//  let entered_password=document.querySelector("#password").value;
+
+//  for(var i=0;i<Data.length;i++)
+//  {
+    
+
+//      if(Data[i].email === entered_email && Data[i].password === entered_password){
+//          alert("LogIn Succeed");
+//          window.location.href="index.html";
+//          break;
+//      }
+//      else{
+//          alert("invalid Credentials")
+//      }
+     
+    
+
+     
+//  }
+
+
+ 
+
+
+ 
+ document.querySelector("form").addEventListener("submit",logFn)
+
+ var regdUsers = JSON.parse(localStorage.getItem("Data"));
+
+ function logFn(){
+    event.preventDefault();
+    var enterEmail = document.querySelector("#email").value;
+    var enterPass = document.querySelector("#password").value;
+ console.log(enterEmail,enterPass)
+    for(var i=0;i<regdUsers.length;i++)
+    {
+        if(regdUsers[i].email == enterEmail && regdUsers[i].password == enterPass)
+        {
+            alert("LogIn Succeed");
+            window.location.href="index.html";
+            break;
+        }
+        
+        
+    }
+  
+
+
+
+ }
+
+
+
+
+
+
+
+
+
+</script>

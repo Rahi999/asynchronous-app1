@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Signup</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Poppins:wght@300&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+        <style>
+       #signup-form-div{
+          
+           width: 300px;
+           border-radius: 15px;
+           padding-left: 70px;
+           padding-top: 20px;
+           height: 300px;
+           box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+           margin: auto;
+           margin-top: 40px;
+        }
+         h1{
+            font-family: 'Roboto', sans-serif;
+         }
+         #submit{
+             background-color: teal;
+             color: white;
+             height: 25px;
+             width: 100px;
+              border-inline: 0px;
+              border-radius: 7px;
+         }
+         #navbar{
+                height: 100px;
+                width: 90%;
+                margin: auto;
+                background-color: blueviolet;
+                border-radius: 10px;
+                display: flex;
+                justify-content: space-around;
+            }
+            #box1{
+              
+                width: 40%;
+                margin-left: 900px;
+                height: 30px;
+                margin-top: 30px;
+                
+            }
+            a{
+                text-decoration: none;
+                color: black;
+                font-family: 'Roboto', sans-serif;
+                margin-left: 40px;
+                
+            }
+            a:hover{
+                color: white;
+                font-size: 25px;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+        <div id="navbar">
+             <div id="box1">
+                 <a href="index.html">Home</a>
+                 <a href="signup.html">SignUp</a>
+                 <a href="login.html">LogIn</a>
+             </div>
+        </div>
+
+
+
+        <div id="signup-form-div">
+             <h1>SignUP</h1>
+            <form>
+                <!--Write form input elements here-->
+                    <input type="text" name="" id="name" placeholder="Enter Your Name" value=""><br><br>
+                    <input type="number" name="" id="contact" placeholder="Enter Your Contact" value=""><br><br>
+                    <input type="email" name="" id="email" placeholder="Enter Your Email" value=""><br><br>
+                    <input type="password" name="" id="password" placeholder="Enter Your Password" value=""><br><br>
+                    <input id="submit" type="submit">
+     
+            </form>
+
+        </div>
+    </body>
+
+</html>
+<script>
+
+document.querySelector("#signup-form-div").addEventListener("submit",signupFN);
+ 
+let userData = JSON.parse(localStorage.getItem("Data")) || [] ;
+ function signupFN () {
+    
+ event.preventDefault();
+ let name = document.querySelector("#name").value;
+ let contact = document.querySelector("#contact").value;
+ let email = document.querySelector("#email").value;
+ let password = document.querySelector("#password").value;
+
+ 
+ let userObj = {
+     name:name,
+     contact:contact,
+     email:email,
+     password:password
+
+ }
+ userData.push(userObj)
+ console.log(userData)
+
+ localStorage.setItem("Data",JSON.stringify(userData));
+  window.location.href="login.html"
+ 
+}
+
+
+
+</script>
